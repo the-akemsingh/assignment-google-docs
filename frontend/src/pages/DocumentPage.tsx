@@ -7,6 +7,7 @@ import StarterKit from '@tiptap/starter-kit';
 import Underline from '@tiptap/extension-underline';
 import { Toolbar } from '../components/Toolbar';
 import { ShareModal } from '../components/ShareModal';
+import type { Document } from '../types';
 import '../components/Toolbar.css';
 import '../components/ShareModal.css';
 
@@ -45,9 +46,9 @@ export const DocumentPage: React.FC = () => {
     extensions: [StarterKit, Underline],
     content: documentData?.content || null,
     editable: false,
-    onUpdate: ({ editor }) => {
-      // We'll handle saving explicitly via the Save button
-    },
+    // onUpdate: ({ editor }) => {
+    //   // We'll handle saving explicitly via the Save button
+    // },
   });
 
   useEffect(() => {

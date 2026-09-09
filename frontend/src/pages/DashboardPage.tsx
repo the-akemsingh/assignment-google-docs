@@ -8,7 +8,7 @@ import type { Document } from '../types';
 import { Link } from 'react-router-dom';
 
 export const DashboardPage: React.FC = () => {
-  const { user, logout } = useAuth();
+  const { logout } = useAuth();
   const navigate = useNavigate();
   const [ownedDocuments, setOwnedDocuments] = useState<Document[]>([]);
   const [sharedDocuments, setSharedDocuments] = useState<Document[]>([]);

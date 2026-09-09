@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
 import { listShares, shareDocument, revokeShare } from '../api/documents';
 
 interface ShareModalProps {
@@ -9,7 +8,6 @@ interface ShareModalProps {
 }
 
 export const ShareModal: React.FC<ShareModalProps> = ({ documentId, isOpen, onClose }) => {
-  const { user } = useAuth();
   const [shares, setShares] = useState<Array<{ id: string; email: string; name: string }>>([]);
   const [emailInput, setEmailInput] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
