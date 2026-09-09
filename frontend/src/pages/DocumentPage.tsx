@@ -45,7 +45,7 @@ export const DocumentPage: React.FC = () => {
   const editor = useEditor({
     extensions: [StarterKit, Underline],
     content: documentData?.content || null,
-    editable: false,
+    editable: true,
     // onUpdate: ({ editor }) => {
     //   // We'll handle saving explicitly via the Save button
     // },
@@ -55,7 +55,6 @@ export const DocumentPage: React.FC = () => {
     if (!editor || !documentData) return;
 
     editor.commands.setContent(documentData.content || null);
-    editor.setEditable(true);
   }, [editor, documentData]);
 
   const handleTitleBlur = async () => {
